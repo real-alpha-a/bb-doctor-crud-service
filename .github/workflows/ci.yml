@@ -1,0 +1,32 @@
+name: CI
+on:
+    push:
+        branches:
+        - master
+        - feature/*
+    pull_request:
+        branches:
+        - master
+    workflow_dispatch:
+        inputs:
+            publish-image:
+                description: publish docker image
+                required: true
+                default: false
+                type: boolean
+concurrency: ci-${{github.ref}}
+jobs:
+  ci:
+    uses: mahajanatul525/github-actions-workflows-library/.github/workflows/reusable-gitops-ci-maven-jib.yml@feature/sonar
+    with:
+      always-publish: ${{github.event.inputs.publish-image == 'true'}}
+      java-version: '17'
+      jfrog-ci-fail: false
+    secrets:
+      DT_TOKEN: ${{secrets.AIGI_DSTORES_DT_TOKEN}}
+      ARTIFACTORY_USERNAME: ${{secrets.JFROG_USERNAME}}
+      ARTIFACTORY_API_KEY: ${{secrets.JFROG_PASSWORD}}
+      GITHUB_CI_APP_ID: ${{secrets.AIGI_DSTORES_GITHUB_CI_APP_ID}}
+      GITHUB_CI_APP_PRIVATE_KEY: ${{secrets.DEPLOYMENT_REPO_TOKEN}}
+      SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+

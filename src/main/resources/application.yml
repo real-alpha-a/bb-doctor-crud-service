@@ -1,0 +1,11 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: doctor-crud-service
+  data:
+    mongodb:
+      uri: --your-mongodb-uri--
+      database: --your-mongodb-database--
+      port: 27017
+
