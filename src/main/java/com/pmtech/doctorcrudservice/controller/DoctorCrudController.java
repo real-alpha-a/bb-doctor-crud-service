@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("api/v1/doctors")
 public class DoctorCrudController {

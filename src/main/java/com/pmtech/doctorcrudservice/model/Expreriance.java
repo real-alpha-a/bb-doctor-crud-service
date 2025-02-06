@@ -9,11 +9,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Qualification {
-
+public class Expreriance {
     private String degree;
-    private String institution;
-    private Date startYear;
-    private Date endYear;
-
+    private String employer;
+    private Date starDate;
+    private Date endDate;
 }

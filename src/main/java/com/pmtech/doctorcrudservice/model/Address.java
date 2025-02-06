@@ -1,10 +1,18 @@
 package com.pmtech.doctorcrudservice.model;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Document(collection = "addresses")
 public class Address {
 
@@ -34,68 +42,6 @@ public class Address {
 
 	private AddressType addressType;
 
-	public String getStreet1() {
-		return street1;
-	}
-	public void setStreet1(String street1) {
-		this.street1 = street1;
-	}
-	public String getStreet2() {
-		return street2;
-	}
-	public void setStreet2(String street2) {
-		this.street2 = street2;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getState() {
-		return state;
-	}
-	public void setState(String state) {
-		this.state = state;
-	}
-	public String getPinCode() {
-		return pinCode;
-	}
-	public void setPinCode(String pinCode) {
-		this.pinCode = pinCode;
-	}
-	public AddressType getAddressType() {
-		return addressType;
-	}
-	public void setAddressType(AddressType addressType) {
-		this.addressType = addressType;
-	}
-	public String getCountry() {
-		return country;
-	}
-	public void setCountry(String country) {
-		this.country = country;
-	}
+	private List<Location> locations;
 
-	public String getDistrict() {
-		return district;
-	}
-
-	public void setDistrict(String district) {
-		this.district = district;
-	}
-
-	@Override
-	public String toString() {
-		return "Address{" +
-				"street1='" + street1 + '\'' +
-				", street2='" + street2 + '\'' +
-				", city='" + city + '\'' +
-				", district='" + district + '\'' +
-				", state='" + state + '\'' +
-				", pinCode='" + pinCode + '\'' +
-				", country='" + country + '\'' +
-				", addressType=" + addressType +
-				'}';
-	}
 }

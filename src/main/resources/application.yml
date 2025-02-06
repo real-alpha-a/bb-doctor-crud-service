@@ -5,7 +5,7 @@ spring:
     name: doctor-crud-service
   data:
     mongodb:
-      uri: --your-mongodb-uri--
-      database: --your-mongodb-database--
+      uri: mongodb+srv://mahajanatul525:Sagarpark%2F009@cluster0.lletbme.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: doct
       port: 27017
 
